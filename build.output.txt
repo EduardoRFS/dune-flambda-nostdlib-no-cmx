@@ -1,12 +1,12 @@
 Workspace root: /home/eduardo/reason/repro-dune-bug
-Running[0]: /usr/bin/nproc > /tmp/dune7090a9.output 2> /dev/null
+Running[0]: /usr/bin/nproc > /tmp/dune4c4339.output 2> /dev/null
 Auto-detected concurrency: 32
 disable binary cache
-Running[1]: /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -config > /tmp/dune455b8c.output
+Running[1]: /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -config > /tmp/dune189388.output
 Dune context:
  { name = "default"
  ; kind = "default"
- ; profile = Dyn
+ ; profile = Release
  ; merlin = true
  ; for_host = None
  ; fdo_target_exe = None
@@ -110,16 +110,19 @@ Actual targets:
 Running[2]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamldep.opt -modules -impl custom_stdlib.ml) > _build/default/.custom_stdlib.objs/custom_stdlib.ml.d
 Running[3]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamldep.opt -modules -impl lib_a.ml) > _build/default/.lib_a.objs/lib_a.ml.d
 Running[4]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamldep.opt -modules -impl executable.ml) > _build/default/.executable.eobjs/executable.ml.d
-Running[5]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I .custom_stdlib.objs/byte -no-alias-deps -opaque -o .custom_stdlib.objs/byte/custom_stdlib.cmo -c -impl custom_stdlib.ml)
-Running[6]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -intf-suffix .ml -no-alias-deps -opaque -o .custom_stdlib.objs/native/custom_stdlib.cmx -c -impl custom_stdlib.ml)
-Running[7]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -nostdlib -nopervasives -g -bin-annot -I .lib_a.objs/byte -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -no-alias-deps -opaque -o .lib_a.objs/byte/lib_a.cmo -c -impl lib_a.ml)
-Running[8]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o custom_stdlib.cma .custom_stdlib.objs/byte/custom_stdlib.cmo)
-Running[9]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -nostdlib -nopervasives -g -I .lib_a.objs/byte -I .lib_a.objs/native -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -intf-suffix .ml -no-alias-deps -opaque -o .lib_a.objs/native/lib_a.cmx -c -impl lib_a.ml)
-Running[10]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -nostdlib -nopervasives -g -a -o lib_a.cma .lib_a.objs/byte/lib_a.cmo)
-Running[11]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o custom_stdlib.cmxa .custom_stdlib.objs/native/custom_stdlib.cmx)
-Running[12]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -nostdlib -nopervasives -g -a -o lib_a.cmxa .lib_a.objs/native/lib_a.cmx)
-Running[13]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -shared -linkall -I . -o custom_stdlib.cmxs custom_stdlib.cmxa)
-Running[14]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I .executable.eobjs/byte -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -I .lib_a.objs/byte -I .lib_a.objs/native -no-alias-deps -opaque -o .executable.eobjs/byte/dune__exe__Executable.cmo -c -impl executable.ml)
-Running[15]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -nostdlib -nopervasives -g -shared -linkall -I . -o lib_a.cmxs lib_a.cmxa)
-Running[16]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .executable.eobjs/byte -I .executable.eobjs/native -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -I .lib_a.objs/byte -I .lib_a.objs/native -intf-suffix .ml -no-alias-deps -opaque -o .executable.eobjs/native/dune__exe__Executable.cmx -c -impl executable.ml)
-Running[17]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o executable.exe custom_stdlib.cmxa lib_a.cmxa .executable.eobjs/native/dune__exe__Executable.cmx)
+Running[5]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w -40 -g -bin-annot -I .custom_stdlib.objs/byte -no-alias-deps -o .custom_stdlib.objs/byte/custom_stdlib.cmo -c -impl custom_stdlib.ml)
+Running[6]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w -40 -g -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -intf-suffix .ml -no-alias-deps -o .custom_stdlib.objs/native/custom_stdlib.cmx -c -impl custom_stdlib.ml)
+Running[7]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w -40 -nostdlib -nopervasives -g -bin-annot -I .lib_a.objs/byte -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -no-alias-deps -o .lib_a.objs/byte/lib_a.cmo -c -impl lib_a.ml)
+Running[8]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w -40 -g -a -o custom_stdlib.cma .custom_stdlib.objs/byte/custom_stdlib.cmo)
+Running[9]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w -40 -nostdlib -nopervasives -g -a -o lib_a.cma .lib_a.objs/byte/lib_a.cmo)
+Running[10]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w -40 -nostdlib -nopervasives -g -I .lib_a.objs/byte -I .lib_a.objs/native -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -intf-suffix .ml -no-alias-deps -o .lib_a.objs/native/lib_a.cmx -c -impl lib_a.ml)
+Running[11]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w -40 -g -a -o custom_stdlib.cmxa .custom_stdlib.objs/native/custom_stdlib.cmx)
+Output[10]:
+File "_none_", line 1:
+Warning 58: no cmx file was found in path for module Stdlib, and its interface was not compiled with -opaque
+Running[12]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w -40 -nostdlib -nopervasives -g -a -o lib_a.cmxa .lib_a.objs/native/lib_a.cmx)
+Running[13]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w -40 -g -shared -linkall -I . -o custom_stdlib.cmxs custom_stdlib.cmxa)
+Running[14]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w -40 -g -bin-annot -I .executable.eobjs/byte -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -I .lib_a.objs/byte -I .lib_a.objs/native -no-alias-deps -o .executable.eobjs/byte/dune__exe__Executable.cmo -c -impl executable.ml)
+Running[15]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w -40 -nostdlib -nopervasives -g -shared -linkall -I . -o lib_a.cmxs lib_a.cmxa)
+Running[16]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w -40 -g -I .executable.eobjs/byte -I .executable.eobjs/native -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -I .lib_a.objs/byte -I .lib_a.objs/native -intf-suffix .ml -no-alias-deps -o .executable.eobjs/native/dune__exe__Executable.cmx -c -impl executable.ml)
+Running[17]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w -40 -g -o executable.exe custom_stdlib.cmxa lib_a.cmxa .executable.eobjs/native/dune__exe__Executable.cmx)
