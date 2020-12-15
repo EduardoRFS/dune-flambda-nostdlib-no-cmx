@@ -1,0 +1,1 @@
+let print_abc () = Custom_stdlib.print_endline "abc"

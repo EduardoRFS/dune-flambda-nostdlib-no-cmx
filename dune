@@ -1,0 +1,15 @@
+(library
+ (name custom_stdlib)
+ (modules custom_stdlib))
+
+(library
+ (name lib_a)
+ (libraries custom_stdlib)
+ (modules lib_a)
+ (flags
+  (:standard -nostdlib -nopervasives)))
+
+(executable
+ (name executable)
+ (modules executable)
+ (libraries lib_a))
