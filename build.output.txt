@@ -1,0 +1,125 @@
+Workspace root: /home/eduardo/reason/repro-dune-bug
+Running[0]: /usr/bin/nproc > /tmp/dune7090a9.output 2> /dev/null
+Auto-detected concurrency: 32
+disable binary cache
+Running[1]: /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -config > /tmp/dune455b8c.output
+Dune context:
+ { name = "default"
+ ; kind = "default"
+ ; profile = Dyn
+ ; merlin = true
+ ; for_host = None
+ ; fdo_target_exe = None
+ ; build_dir = "default"
+ ; toplevel_path =
+     Some External "/home/eduardo/.opam/4.09.1+flambda/lib/toplevel"
+ ; ocaml_bin = External "/home/eduardo/.opam/4.09.1+flambda/bin"
+ ; ocaml = Ok External "/home/eduardo/.opam/4.09.1+flambda/bin/ocaml"
+ ; ocamlc = External "/home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt"
+ ; ocamlopt =
+     Ok External "/home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt"
+ ; ocamldep =
+     Ok External "/home/eduardo/.opam/4.09.1+flambda/bin/ocamldep.opt"
+ ; ocamlmklib =
+     Ok External "/home/eduardo/.opam/4.09.1+flambda/bin/ocamlmklib.opt"
+ ; env =
+     map
+       { "INSIDE_DUNE" : "/home/eduardo/reason/repro-dune-bug/_build/default"
+       ; "OCAMLFIND_IGNORE_DUPS_IN" :
+           "/home/eduardo/reason/repro-dune-bug/_build/install/default/lib"
+       ; "OCAMLPATH" :
+           "/home/eduardo/reason/repro-dune-bug/_build/install/default/lib"
+       ; "OCAMLTOP_INCLUDE_PATH" :
+           "/home/eduardo/reason/repro-dune-bug/_build/install/default/lib/toplevel"
+       }
+ ; findlib_path = [ External "/home/eduardo/.opam/4.09.1+flambda/lib" ]
+ ; arch_sixtyfour = true
+ ; natdynlink_supported = true
+ ; supports_shared_libraries = true
+ ; ocaml_config =
+     { version = "4.09.1"
+     ; standard_library_default =
+         "/home/eduardo/.opam/4.09.1+flambda/lib/ocaml"
+     ; standard_library = "/home/eduardo/.opam/4.09.1+flambda/lib/ocaml"
+     ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+     ; ccomp_type = "cc"
+     ; c_compiler = "gcc"
+     ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+     ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+     ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+     ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+     ; bytecomp_c_compiler =
+         [ "gcc"
+         ; "-O2"
+         ; "-fno-strict-aliasing"
+         ; "-fwrapv"
+         ; "-fPIC"
+         ; "-D_FILE_OFFSET_BITS=64"
+         ; "-D_REENTRANT"
+         ]
+     ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lpthread" ]
+     ; native_c_compiler =
+         [ "gcc"
+         ; "-O2"
+         ; "-fno-strict-aliasing"
+         ; "-fwrapv"
+         ; "-D_FILE_OFFSET_BITS=64"
+         ; "-D_REENTRANT"
+         ]
+     ; native_c_libraries = [ "-lm"; "-ldl" ]
+     ; cc_profile = []
+     ; architecture = "amd64"
+     ; model = "default"
+     ; int_size = 63
+     ; word_size = 64
+     ; system = "linux"
+     ; asm = [ "as" ]
+     ; asm_cfi_supported = true
+     ; with_frame_pointers = false
+     ; ext_exe = ""
+     ; ext_obj = ".o"
+     ; ext_asm = ".s"
+     ; ext_lib = ".a"
+     ; ext_dll = ".so"
+     ; os_type = "Unix"
+     ; default_executable_name = "a.out"
+     ; systhread_supported = true
+     ; host = "x86_64-pc-linux-gnu"
+     ; target = "x86_64-pc-linux-gnu"
+     ; profiling = false
+     ; flambda = true
+     ; spacetime = false
+     ; safe_string = false
+     ; exec_magic_number = "Caml1999X026"
+     ; cmi_magic_number = "Caml1999I026"
+     ; cmo_magic_number = "Caml1999O026"
+     ; cma_magic_number = "Caml1999A026"
+     ; cmx_magic_number = "Caml1999y026"
+     ; cmxa_magic_number = "Caml1999z026"
+     ; ast_impl_magic_number = "Caml1999M026"
+     ; ast_intf_magic_number = "Caml1999N026"
+     ; cmxs_magic_number = "Caml1999D026"
+     ; cmt_magic_number = "Caml1999T026"
+     ; natdynlink_supported = true
+     ; supports_shared_libraries = true
+     ; windows_unicode = false
+     }
+ }
+Actual targets:
+- alias @@default
+Running[2]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamldep.opt -modules -impl custom_stdlib.ml) > _build/default/.custom_stdlib.objs/custom_stdlib.ml.d
+Running[3]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamldep.opt -modules -impl lib_a.ml) > _build/default/.lib_a.objs/lib_a.ml.d
+Running[4]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamldep.opt -modules -impl executable.ml) > _build/default/.executable.eobjs/executable.ml.d
+Running[5]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I .custom_stdlib.objs/byte -no-alias-deps -opaque -o .custom_stdlib.objs/byte/custom_stdlib.cmo -c -impl custom_stdlib.ml)
+Running[6]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -intf-suffix .ml -no-alias-deps -opaque -o .custom_stdlib.objs/native/custom_stdlib.cmx -c -impl custom_stdlib.ml)
+Running[7]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -nostdlib -nopervasives -g -bin-annot -I .lib_a.objs/byte -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -no-alias-deps -opaque -o .lib_a.objs/byte/lib_a.cmo -c -impl lib_a.ml)
+Running[8]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o custom_stdlib.cma .custom_stdlib.objs/byte/custom_stdlib.cmo)
+Running[9]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -nostdlib -nopervasives -g -I .lib_a.objs/byte -I .lib_a.objs/native -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -intf-suffix .ml -no-alias-deps -opaque -o .lib_a.objs/native/lib_a.cmx -c -impl lib_a.ml)
+Running[10]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -nostdlib -nopervasives -g -a -o lib_a.cma .lib_a.objs/byte/lib_a.cmo)
+Running[11]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -a -o custom_stdlib.cmxa .custom_stdlib.objs/native/custom_stdlib.cmx)
+Running[12]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -nostdlib -nopervasives -g -a -o lib_a.cmxa .lib_a.objs/native/lib_a.cmx)
+Running[13]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -shared -linkall -I . -o custom_stdlib.cmxs custom_stdlib.cmxa)
+Running[14]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I .executable.eobjs/byte -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -I .lib_a.objs/byte -I .lib_a.objs/native -no-alias-deps -opaque -o .executable.eobjs/byte/dune__exe__Executable.cmo -c -impl executable.ml)
+Running[15]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -nostdlib -nopervasives -g -shared -linkall -I . -o lib_a.cmxs lib_a.cmxa)
+Running[16]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .executable.eobjs/byte -I .executable.eobjs/native -I .custom_stdlib.objs/byte -I .custom_stdlib.objs/native -I .lib_a.objs/byte -I .lib_a.objs/native -intf-suffix .ml -no-alias-deps -opaque -o .executable.eobjs/native/dune__exe__Executable.cmx -c -impl executable.ml)
+Running[17]: (cd _build/default && /home/eduardo/.opam/4.09.1+flambda/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o executable.exe custom_stdlib.cmxa lib_a.cmxa .executable.eobjs/native/dune__exe__Executable.cmx)
